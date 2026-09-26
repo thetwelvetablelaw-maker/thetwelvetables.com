@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ChevronDown } from "lucide-react";
 import { practiceAreas } from "@/data/practiceAreas";
+import { practiceAreaFaqs } from "@/data/practiceAreaFaqs";
 import { contact, practiceAreaMessage } from "@/config/contact";
 import { CallLink, WhatsAppLink, callButtonClass, whatsappButtonClass } from "@/components/LeadLinks";
 import ContactSection from "@/components/ContactSection";
@@ -39,9 +41,18 @@ export default async function PracticeAreaPage({ params }: Props) {
   if (!area) notFound();
 
   const others = practiceAreas.filter((a) => a.slug !== area.slug);
+  const faqs = practiceAreaFaqs[area.slug] ?? [];
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
 
   return (
     <>
+      {faqs.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
       <section className="bg-law-dark py-14">
         <div className="container mx-auto px-4">
           <nav aria-label="Breadcrumb" className="text-sm text-law-cream/60 mb-4">
@@ -77,6 +88,29 @@ export default async function PracticeAreaPage({ params }: Props) {
             />
             <h2 className="font-heading text-2xl font-bold text-foreground mb-4">How we can help</h2>
             <p className="text-muted-foreground leading-relaxed text-base md:text-lg max-w-[65ch]">{area.detail}</p>
+
+            {faqs.length > 0 && (
+              <div className="mt-12">
+                <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Common questions</h2>
+                <div className="divide-y divide-border rounded-xl border border-border bg-card">
+                  {faqs.map((f) => (
+                    <details key={f.q} className="group px-5 py-4">
+                      <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+                        {f.q}
+                        <ChevronDown
+                          className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary transition-transform group-open:rotate-180"
+                          aria-hidden="true"
+                        />
+                      </summary>
+                      <p className="mt-3 text-muted-foreground leading-relaxed max-w-[65ch]">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  General information only, not legal advice. See our <Link href="/disclaimer/" className="underline">disclaimer</Link>.
+                </p>
+              </div>
+            )}
           </article>
 
           <aside className="space-y-6">
