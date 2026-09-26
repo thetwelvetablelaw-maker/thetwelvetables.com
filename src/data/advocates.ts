@@ -13,7 +13,6 @@ export interface Advocate {
   practiceAreas?: string; // e.g. "Criminal law, bail and Supreme Court matters"
 }
 
-// TODO(client): add qualifications, enrolment details and focus areas for each advocate.
 export const advocates: Advocate[] = [
   { name: "Adv. Daksh Singh", image: lawyer1, court: "Supreme Court of India" },
   { name: "Adv. Madhusudan", image: lawyer2, court: "Supreme Court of India" },
