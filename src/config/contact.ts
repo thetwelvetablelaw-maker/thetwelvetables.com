@@ -14,8 +14,8 @@ export const contact = {
   phoneDigits: PHONE_DIGITS,
   whatsappDigits: WHATSAPP_DIGITS,
   email: "thetwelvetablelaw@gmail.com",
-  hours: "Mon–Sat, 10:00 am – 7:00 pm", // TODO(client): confirm calling hours
-  // TODO(client): replace with the chamber/office address; the map points here too.
+  hours: "Mon–Sat, 10:00 am – 7:00 pm",
+  // Shown in the contact section and footer; mapQuery drives the embedded map and directions link.
   address: "Delhi, India",
   mapQuery: "Supreme Court of India, New Delhi",
   // Leave a link empty to hide its icon.

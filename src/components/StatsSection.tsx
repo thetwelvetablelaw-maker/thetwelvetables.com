@@ -3,7 +3,7 @@ import { practiceAreas } from "@/data/practiceAreas";
 
 // Factual figures only. Success rates and client counts are avoided under BCI Rule 36.
 const stats = [
-  { icon: Calendar, value: "2009", label: "In practice since" }, // TODO(client): confirm year
+  { icon: Calendar, value: "2009", label: "In practice since" },
   { icon: Landmark, value: "3", label: "Court levels: Supreme, High & District" },
   { icon: Scale, value: String(practiceAreas.length), label: "Practice areas" },
   { icon: MapPin, value: "Delhi NCR", label: "Based in" },
