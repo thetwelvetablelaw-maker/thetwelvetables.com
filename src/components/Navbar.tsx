@@ -3,12 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import { navLinks } from "@/config/nav";
 import { contact } from "@/config/contact";
-import { WhatsAppLink, whatsappButtonClass } from "@/components/LeadLinks";
-import { cn } from "@/lib/utils";
+import { CallLink } from "@/components/LeadLinks";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -33,7 +32,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        <WhatsAppLink source="navbar" className={cn(whatsappButtonClass, "hidden lg:inline-flex px-6 py-2.5 text-sm")} />
+        <CallLink source="navbar" className="hidden lg:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4">
+          <Phone className="w-4 h-4" aria-hidden="true" />
+          {contact.phoneDisplay}
+        </CallLink>
 
         <button
           type="button"

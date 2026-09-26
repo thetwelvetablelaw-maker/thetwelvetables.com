@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Navigation } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { practiceAreas } from "@/data/practiceAreas";
 import { contact, mailHref, mapDirectionsHref, mapEmbedSrc, whatsappHref } from "@/config/contact";
-import { CallLink, WhatsAppLink, callButtonClass, whatsappButtonClass } from "@/components/LeadLinks";
+import { CallLink, whatsappButtonClass } from "@/components/LeadLinks";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { cn } from "@/lib/utils";
 
@@ -111,19 +112,23 @@ const ContactSection = ({ defaultArea = "" }: { defaultArea?: string }) => {
                 <WhatsAppIcon className="w-5 h-5" />
                 Send on WhatsApp
               </button>
+              <p className="text-xs text-muted-foreground text-center">
+                By sending, you agree to our{" "}
+                <Link href="/privacy-policy/" className="underline hover:text-primary">Privacy Policy</Link>. Please do not share
+                confidential documents until we have spoken.
+              </p>
             </form>
           </div>
 
           <div className="space-y-6">
             <div className="rounded-2xl bg-law-dark p-6 md:p-8 shadow-xl space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <CallLink source="contact" className={cn(callButtonClass, "flex-1 px-6 py-3")} />
-                <WhatsAppLink source="contact" className={cn(whatsappButtonClass, "flex-1 px-6 py-3")} />
-              </div>
-              <ul className="space-y-3 pt-2 text-sm text-law-cream/80">
-                <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-law-gold" aria-hidden="true" />
-                  <span className="select-all">{contact.phoneDisplay}</span>
+              <h3 className="font-heading text-xl font-bold text-law-cream">Contact details</h3>
+              <ul className="space-y-3 text-sm text-law-cream/80">
+                <li>
+                  <CallLink source="contact" className="flex items-center gap-3 hover:text-law-gold transition-colors">
+                    <Phone className="w-5 h-5 text-law-gold" aria-hidden="true" />
+                    {contact.phoneDisplay} (call or WhatsApp)
+                  </CallLink>
                 </li>
                 <li>
                   <a href={mailHref} className="flex items-center gap-3 hover:text-law-gold transition-colors">

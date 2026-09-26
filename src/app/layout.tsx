@@ -1,11 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LeadButtons from "@/components/LeadButtons";
-import DisclaimerModal from "@/components/DisclaimerModal";
+import DisclaimerNotice from "@/components/DisclaimerNotice";
 import { Toaster } from "@/components/ui/toaster";
 import { contact, siteUrl } from "@/config/contact";
 import { practiceAreas } from "@/data/practiceAreas";
@@ -47,12 +46,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-IN" className={`${heading.variable} ${body.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <DisclaimerModal />
-        <TopBar />
         <Navbar />
         <main>{children}</main>
         <Footer />
         <LeadButtons />
+        <DisclaimerNotice />
         <Toaster />
       </body>
     </html>

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden">
       <Image src={heroBg} alt="" fill preload fetchPriority="high" sizes="100vw" className="object-cover object-center" />
       <div className="absolute inset-0 bg-law-dark/75" />
       <div className="relative z-10 container mx-auto px-4 py-16 text-center animate-fade-in-up">

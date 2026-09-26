@@ -3,8 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { navLinks } from "@/config/nav";
 import { practiceAreas } from "@/data/practiceAreas";
 import { contact, mailHref } from "@/config/contact";
-import { CallLink, WhatsAppLink } from "@/components/LeadLinks";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { CallLink } from "@/components/LeadLinks";
 
 const linkClass = "text-law-cream/70 hover:text-law-gold font-body text-sm transition-colors";
 
@@ -49,9 +48,6 @@ const Footer = () => {
               <CallLink source="footer" className={`flex items-center gap-2 ${linkClass}`}>
                 <Phone className="w-4 h-4 text-law-gold" aria-hidden="true" /> {contact.phoneDisplay}
               </CallLink>
-              <WhatsAppLink source="footer" className={`flex items-center gap-2 ${linkClass}`}>
-                <WhatsAppIcon className="w-4 h-4 text-law-gold" /> WhatsApp {contact.phoneDisplay}
-              </WhatsAppLink>
               <a href={mailHref} className={`flex items-center gap-2 ${linkClass}`}>
                 <Mail className="w-4 h-4 text-law-gold" aria-hidden="true" /> {contact.email}
               </a>
@@ -69,6 +65,11 @@ const Footer = () => {
           <p className="text-law-cream/50 font-body text-xs max-w-3xl mx-auto">
             As per the rules of the Bar Council of India, this website is for information only. It is not an
             advertisement or solicitation, and nothing on it creates a lawyer-client relationship.
+          </p>
+          <p className="font-body text-xs">
+            <Link href="/privacy-policy/" className="text-law-cream/70 hover:text-law-gold underline-offset-2 hover:underline">Privacy Policy</Link>
+            <span className="mx-2 text-law-cream/40">·</span>
+            <Link href="/disclaimer/" className="text-law-cream/70 hover:text-law-gold underline-offset-2 hover:underline">Disclaimer</Link>
           </p>
           <p className="text-law-cream/50 font-body text-xs">
             © {new Date().getFullYear()} {contact.firmName}. All rights reserved.

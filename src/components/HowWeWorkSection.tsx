@@ -1,8 +1,8 @@
 const steps = [
   { num: "1", title: "Consultation with Confidentiality", desc: "We discuss your case and advise you on the applicable law, in strict confidence." },
-  { num: "2", title: "Case Evaluation & Strategy", desc: "Our team analyzes your case from every corner and sets out a strategy suited to your situation." },
-  { num: "3", title: "Time Bound Representation", desc: "We advocate for your rights and meet every court date and filing deadline." },
-  { num: "4", title: "Resolution & Support", desc: "We keep you informed at every stage and remain available until the matter is concluded." },
+  { num: "2", title: "Case Evaluation & Strategy", desc: "We review the facts and documents and set out a strategy suited to your situation." },
+  { num: "3", title: "Representation", desc: "We represent you in court and before tribunals, and keep track of dates and filing deadlines." },
+  { num: "4", title: "Ongoing Support", desc: "We keep you informed at every stage and remain available until the matter is concluded." },
 ];
 
 const HowWeWorkSection = () => {

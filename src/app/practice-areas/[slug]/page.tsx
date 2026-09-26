@@ -80,18 +80,6 @@ export default async function PracticeAreaPage({ params }: Props) {
           </article>
 
           <aside className="space-y-6">
-            <div className="rounded-xl border border-border bg-card p-6">
-              <h2 className="font-heading text-lg font-semibold text-foreground mb-2">Discuss your matter</h2>
-              <p className="text-sm text-muted-foreground mb-4">{contact.hours}</p>
-              <div className="flex flex-col gap-3">
-                <CallLink source={`aside-${area.slug}`} className={cn(callButtonClass, "px-6 py-3")} />
-                <WhatsAppLink
-                  source={`aside-${area.slug}`}
-                  message={practiceAreaMessage(area.short)}
-                  className={cn(whatsappButtonClass, "px-6 py-3")}
-                />
-              </div>
-            </div>
             <nav aria-label="Other practice areas" className="rounded-xl border border-border bg-card p-6">
               <h2 className="font-heading text-lg font-semibold text-foreground mb-3">Other practice areas</h2>
               <ul className="space-y-2">
