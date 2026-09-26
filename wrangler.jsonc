@@ -1,0 +1,10 @@
+// Cloudflare Workers config: serve the static Next.js export (out/) as assets. No server code.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "thetwelvetables-com",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
