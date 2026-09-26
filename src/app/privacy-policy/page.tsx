@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
 import { contact, mailHref } from "@/config/contact";
 
@@ -38,6 +39,14 @@ export default function PrivacyPolicyPage() {
         We do not use this information to identify you.
       </p>
 
+      <h2>Cookies and browser storage</h2>
+      <p>
+        This website does not use advertising or tracking cookies. It stores one setting in your browser (local storage)
+        to remember that you have read the Bar Council disclaimer notice, so it is not shown on every page. Cloudflare may
+        set a strictly necessary security cookie to protect the website from automated abuse. You can clear these at any
+        time in your browser settings.
+      </p>
+
       <h2>Analytics</h2>
       <p>
         We may count how many visitors tap the Call and WhatsApp buttons, so that we can understand which pages are
@@ -73,6 +82,12 @@ export default function PrivacyPolicyPage() {
         You may ask us to access, correct or erase the personal information we hold about you, withdraw your consent,
         or raise a grievance. Write to <a href={mailHref}>{contact.email}</a> and we will respond within a reasonable
         time. If you are not satisfied with our response, you may approach the Data Protection Board of India.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        We may update this policy, for example if we start using analytics. The date at the top shows when it last
+        changed. See also our <Link href="/terms/">Terms of Use</Link>.
       </p>
 
       <h2>Contact</h2>

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import lawyer1 from "@/assets/lawyer-1.webp";
-import lawyer2 from "@/assets/lawyer-2.webp";
+import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { contact } from "@/config/contact";
+import { advocates } from "@/data/advocates";
 
 const points = [
   "Advocates, solicitors and consultants under one roof",
@@ -13,14 +13,9 @@ const points = [
   "Strict confidentiality",
 ];
 
-const advocates = [
-  { image: lawyer1, name: "Adv. Daksh Singh", court: "Supreme Court of India" },
-  { image: lawyer2, name: "Adv. Madhusudan", court: "Supreme Court of India" },
-];
-
-const AboutSection = () => {
+const AboutSection = ({ linkToAbout = false }: { linkToAbout?: boolean }) => {
   return (
-    <section id="about" className="py-20 section-light scroll-mt-24">
+    <section id="about" className="py-16 md:py-20 section-light scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="grid grid-cols-2 gap-4">
@@ -30,11 +25,14 @@ const AboutSection = () => {
                   src={a.image}
                   alt={`${a.name}, ${a.court}`}
                   sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="rounded-lg shadow-xl w-full h-96 object-contain"
+                  className="rounded-lg shadow-xl w-full h-80 md:h-96 object-contain"
                 />
-                <figcaption>
-                  <p className="mt-3 font-heading font-semibold text-foreground">{a.name}</p>
+                <figcaption className="mt-3 space-y-0.5">
+                  <p className="font-heading font-semibold text-foreground">{a.name}</p>
                   <p className="text-sm text-muted-foreground">{a.court}</p>
+                  {a.qualifications && <p className="text-xs text-muted-foreground">{a.qualifications}</p>}
+                  {a.enrolment && <p className="text-xs text-muted-foreground">Enrolment: {a.enrolment}</p>}
+                  {a.practiceAreas && <p className="text-xs text-muted-foreground">{a.practiceAreas}</p>}
                 </figcaption>
               </figure>
             ))}
@@ -44,10 +42,10 @@ const AboutSection = () => {
             <p className="text-primary font-body text-sm uppercase tracking-widest mb-2">About us</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">{contact.firmName}</h2>
             <p className="text-muted-foreground font-body leading-relaxed mb-6">
-              {contact.firmName} is a firm of advocates, solicitors and legal consultants based in Delhi. We advise
-              individuals, families and businesses, and represent them before courts and tribunals across Delhi NCR
-              and before the Supreme Court of India. Every matter starts with a confidential consultation in which we
-              listen to the facts, review the documents and explain the options available.
+              {contact.firmName} is a firm of advocates, solicitors and legal consultants based in Delhi, in practice since
+              2009. We advise individuals, families and businesses, and represent them before courts and tribunals across
+              Delhi NCR and before the Supreme Court of India. Every matter starts with a confidential consultation in
+              which we listen to the facts, review the documents and explain the options available.
             </p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -58,6 +56,12 @@ const AboutSection = () => {
                 </li>
               ))}
             </ul>
+
+            {linkToAbout && (
+              <Link href="/about/" className="inline-block mt-6 text-primary font-semibold hover:underline underline-offset-4">
+                More about the firm →
+              </Link>
+            )}
           </div>
         </div>
       </div>

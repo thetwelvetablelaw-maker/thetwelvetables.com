@@ -16,7 +16,7 @@ export default function HomePage() {
       <HeroSection />
       <TrustStrip />
       <PracticeAreasSection />
-      <AboutSection />
+      <AboutSection linkToAbout />
       <HowWeWorkSection />
       <ContactSection />
     </>

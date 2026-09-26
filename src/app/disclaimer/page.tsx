@@ -55,7 +55,8 @@ export default function DisclaimerPage() {
 
       <h2>Personal information</h2>
       <p>
-        See our <Link href="/privacy-policy/">Privacy Policy</Link> for how we handle information you share with us.
+        See our <Link href="/privacy-policy/">Privacy Policy</Link> for how we handle information you share with us, and
+        our <Link href="/terms/">Terms of Use</Link> for the terms that apply to this website.
       </p>
 
       <h2>Contact</h2>

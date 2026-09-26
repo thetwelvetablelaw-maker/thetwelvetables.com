@@ -13,6 +13,7 @@ const headingClass = "font-body text-xs font-semibold uppercase tracking-[0.18em
 const legalLinks = [
   { label: "Privacy Policy", href: "/privacy-policy/" },
   { label: "Disclaimer", href: "/disclaimer/" },
+  { label: "Terms of Use", href: "/terms/" },
 ];
 
 const Footer = () => {

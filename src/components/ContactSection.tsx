@@ -18,7 +18,7 @@ const inputClass =
 
 const emptyForm = (area = "") => ({ name: "", phone: "", area, message: "" });
 
-const ContactSection = ({ defaultArea = "" }: { defaultArea?: string }) => {
+const ContactSection = ({ defaultArea = "", showHeading = true }: { defaultArea?: string; showHeading?: boolean }) => {
   const [form, setForm] = useState(() => emptyForm(defaultArea));
   const { toast } = useToast();
 
@@ -56,13 +56,15 @@ const ContactSection = ({ defaultArea = "" }: { defaultArea?: string }) => {
   return (
     <section id="contact" className="py-20 section-light scroll-mt-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Contact Us</h2>
-          <div className="gold-accent-line mx-auto mt-4" />
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            The quickest way to reach us is a call or a WhatsApp message. You can also leave your details below.
-          </p>
-        </div>
+        {showHeading && (
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Contact Us</h2>
+            <div className="gold-accent-line mx-auto mt-4" />
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+              The quickest way to reach us is a call or a WhatsApp message. You can also leave your details below.
+            </p>
+          </div>
+        )}
 
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div className="rounded-2xl bg-card border border-border p-6 md:p-8 shadow-xl">

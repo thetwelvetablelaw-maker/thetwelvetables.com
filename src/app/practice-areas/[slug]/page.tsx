@@ -8,6 +8,7 @@ import { practiceAreaFaqs } from "@/data/practiceAreaFaqs";
 import { contact, practiceAreaMessage } from "@/config/contact";
 import { CallLink, WhatsAppLink, callButtonClass, whatsappButtonClass } from "@/components/LeadLinks";
 import ContactSection from "@/components/ContactSection";
+import PageHero from "@/components/PageHero";
 import { cn } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -53,27 +54,20 @@ export default async function PracticeAreaPage({ params }: Props) {
       {faqs.length > 0 && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       )}
-      <section className="bg-law-dark py-14">
-        <div className="container mx-auto px-4">
-          <nav aria-label="Breadcrumb" className="text-sm text-law-cream/60 mb-4">
-            <Link href="/" className="hover:text-law-gold">Home</Link>
-            <span className="mx-2">/</span>
-            <Link href="/#practice-areas" className="hover:text-law-gold">Practice Areas</Link>
-            <span className="mx-2">/</span>
-            <span className="text-law-cream/90">{area.title}</span>
-          </nav>
-          <h1 className="font-heading text-3xl md:text-5xl font-bold text-law-cream mb-4">{area.title} Lawyers in Delhi</h1>
-          <p className="text-law-cream/80 text-lg max-w-2xl mb-8">{area.desc}</p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <CallLink source={`page-${area.slug}`} className={cn(callButtonClass, "px-8 py-3.5")} />
-            <WhatsAppLink
-              source={`page-${area.slug}`}
-              message={practiceAreaMessage(area.short)}
-              className={cn(whatsappButtonClass, "px-8 py-3.5")}
-            />
-          </div>
+      <PageHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "Practice Areas", href: "/practice-areas/" }, { label: area.title }]}
+        title={`${area.title} Lawyers in Delhi`}
+        intro={area.desc}
+      >
+        <div className="flex flex-col sm:flex-row gap-3">
+          <CallLink source={`page-${area.slug}`} className={cn(callButtonClass, "px-8 py-3.5")} />
+          <WhatsAppLink
+            source={`page-${area.slug}`}
+            message={practiceAreaMessage(area.short)}
+            className={cn(whatsappButtonClass, "px-8 py-3.5")}
+          />
         </div>
-      </section>
+      </PageHero>
 
       <section className="py-16 section-light">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-12">
