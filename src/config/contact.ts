@@ -1,9 +1,8 @@
 // Single source of truth for every contact detail on the site.
 // Change a number here and it updates the top bar, buttons, form, footer and mobile bar.
 
-// TODO(client): confirm the number. The site used 9958861327; the old meta tags used 9625921134.
-const PHONE_DIGITS = "919958861327"; // country code + number, digits only
-const WHATSAPP_DIGITS = PHONE_DIGITS; // TODO(client): change if WhatsApp is on a different number
+const PHONE_DIGITS = "919958861327"; // country code + number, digits only (confirmed Sept 2026)
+const WHATSAPP_DIGITS = PHONE_DIGITS; // same number is on WhatsApp; change here if that ever differs
 
 // No trailing slash, so paths like `${siteUrl}/sitemap.xml` stay clean even if the env value has one.
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://thetwelvetables.com").replace(/\/+$/, "");
