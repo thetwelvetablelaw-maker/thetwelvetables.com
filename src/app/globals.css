@@ -1,0 +1,101 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 10% 95%;
+    --foreground: 30 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 10%;
+
+    --primary: 36 65% 33%;
+    --primary-foreground: 40 30% 96%;
+
+    --secondary: 30 8% 90%;
+    --secondary-foreground: 30 10% 15%;
+
+    --muted: 30 8% 92%;
+    --muted-foreground: 30 6% 37%;
+
+    --accent: 36 65% 33%;
+    --accent-foreground: 40 30% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 12% 85%;
+    --input: 30 12% 85%;
+    --ring: 36 65% 33%;
+
+    --radius: 0.5rem;
+
+    /* Custom law firm tokens */
+    --law-dark: 30 15% 8%;
+    --law-dark-surface: 30 12% 12%;
+    --law-gold: 36 60% 42%;
+    --law-gold-light: 36 50% 55%;
+    --law-gold-glow: 36 70% 50%;
+    --law-cream: 40 30% 96%;
+    --law-warm-gray: 30 5% 45%;
+
+
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .section-dark {
+    @apply bg-law-dark text-law-cream;
+  }
+
+  .section-light {
+    @apply bg-background text-foreground;
+  }
+
+  .gold-accent-line {
+    @apply w-16 h-1 bg-primary rounded-full;
+  }
+
+  .service-card {
+    @apply bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border;
+  }
+
+  .stat-item {
+    @apply text-center;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(36 60% 42%), hsl(36 70% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keep content clear of the fixed mobile call/WhatsApp bar */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
