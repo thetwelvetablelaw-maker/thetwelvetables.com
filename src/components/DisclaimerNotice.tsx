@@ -36,7 +36,7 @@ const DisclaimerNotice = () => {
     <div
       role="region"
       aria-label="Bar Council of India disclaimer"
-      className="fixed inset-x-3 z-40 bottom-[calc(4.25rem+env(safe-area-inset-bottom,0px))] lg:bottom-5 lg:left-5 lg:right-auto lg:max-w-md rounded-xl bg-law-dark text-law-cream shadow-2xl p-4 flex flex-col gap-3"
+      className="fixed inset-x-3 z-40 bottom-[calc(4.25rem+env(safe-area-inset-bottom,0px))] lg:bottom-5 lg:left-5 lg:right-auto lg:max-w-md rounded-xl bg-law-dark text-law-cream shadow-2xl ring-1 ring-law-gold/40 p-4 flex flex-col gap-3"
     >
       <p className="text-sm leading-relaxed text-law-cream/85">
         As per Bar Council of India rules, this website is for information only and is not an advertisement or
