@@ -5,8 +5,8 @@
 const PHONE_DIGITS = "919958861327"; // country code + number, digits only
 const WHATSAPP_DIGITS = PHONE_DIGITS; // TODO(client): change if WhatsApp is on a different number
 
-// TODO(client): set the real domain once it is connected on Cloudflare.
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://thetwelvetable.in";
+// No trailing slash, so paths like `${siteUrl}/sitemap.xml` stay clean even if the env value has one.
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://thetwelvetables.com").replace(/\/+$/, "");
 
 export const contact = {
   firmName: "TheTwelveTable",
