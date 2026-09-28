@@ -24,6 +24,9 @@ export const contact = {
   defaultWhatsappMessage: "Hello TheTwelveTable, I would like to discuss a legal matter.",
 };
 
+// Google Business Profile (permanent CID link; the long share URLs can change).
+export const googleBusinessUrl = "https://maps.google.com/?cid=15125183151631476621";
+
 // Where clients can meet the advocates. The first location with `showMap` is embedded on the contact section.
 export const locations = [
   {
@@ -36,7 +39,8 @@ export const locations = [
   {
     label: "Office",
     lines: ["B-21, Shindler Building", "Sector 2, Noida, Uttar Pradesh"],
-    mapQuery: "B-21, Sector 2, Noida, Uttar Pradesh",
+    mapQuery: "The Twelve Table, B-21, Shindler Building, Sector 2, Noida",
+    mapsUrl: googleBusinessUrl,
     postal: { streetAddress: "B-21, Shindler Building, Sector 2", addressLocality: "Noida", addressRegion: "Uttar Pradesh" },
     showMap: true,
   },

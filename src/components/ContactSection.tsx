@@ -163,6 +163,17 @@ const ContactSection = ({ defaultArea = "", showHeading = true }: { defaultArea?
                         <Navigation className="w-3.5 h-3.5" aria-hidden="true" />
                         Directions<span className="sr-only"> to our {loc.label.toLowerCase()}</span>
                       </a>
+                      {loc.mapsUrl && (
+                        <a
+                          href={loc.mapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-law-gold hover:underline underline-offset-2"
+                        >
+                          <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+                          View on Google Maps
+                        </a>
+                      )}
                     </span>
                   </address>
                 ))}

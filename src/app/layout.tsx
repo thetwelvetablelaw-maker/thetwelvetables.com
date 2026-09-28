@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import LeadButtons from "@/components/LeadButtons";
 import DisclaimerNotice from "@/components/DisclaimerNotice";
 import { Toaster } from "@/components/ui/toaster";
-import { contact, locations, siteUrl } from "@/config/contact";
+import { contact, googleBusinessUrl, locations, siteUrl } from "@/config/contact";
 import { practiceAreas } from "@/data/practiceAreas";
 
 const heading = Playfair_Display({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-heading", display: "swap" });
@@ -38,6 +38,8 @@ const jsonLd = {
   email: contact.email,
   address: locations.map((l) => ({ "@type": "PostalAddress", ...l.postal, addressCountry: "IN" })),
   areaServed: "Delhi NCR",
+  hasMap: googleBusinessUrl,
+  sameAs: [googleBusinessUrl],
   knowsAbout: practiceAreas.map((a) => a.title),
 };
 
