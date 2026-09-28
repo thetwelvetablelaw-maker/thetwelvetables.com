@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
-import { contact, mailHref } from "@/config/contact";
+import { contact, locations, mailHref } from "@/config/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -92,7 +92,13 @@ export default function PrivacyPolicyPage() {
 
       <h2>Contact</h2>
       <p>
-        {contact.firmName}, {contact.address}
+        {contact.firmName}
+        {locations.map((loc) => (
+          <span key={loc.label}>
+            <br />
+            {loc.label}: {loc.lines.join(", ")}
+          </span>
+        ))}
         <br />
         Email: <a href={mailHref}>{contact.email}</a>
         <br />

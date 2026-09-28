@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import { navLinks } from "@/config/nav";
 import { practiceAreas } from "@/data/practiceAreas";
-import { contact, mailHref } from "@/config/contact";
+import { contact, locations, mailHref } from "@/config/contact";
 import { CallLink } from "@/components/LeadLinks";
 
 const linkClass = "text-law-cream/75 hover:text-law-gold font-body text-sm transition-colors";
@@ -75,10 +75,15 @@ const Footer = () => {
               <Clock className="w-4 h-4 mt-0.5 text-law-gold flex-shrink-0" aria-hidden="true" />
               {contact.hours}
             </li>
-            <li className="flex items-start gap-3 text-law-cream/75">
-              <MapPin className="w-4 h-4 mt-0.5 text-law-gold flex-shrink-0" aria-hidden="true" />
-              {contact.address}
-            </li>
+            {locations.map((loc) => (
+              <li key={loc.label} className="flex items-start gap-3 text-law-cream/75">
+                <MapPin className="w-4 h-4 mt-0.5 text-law-gold flex-shrink-0" aria-hidden="true" />
+                <address className="not-italic">
+                  <span className="block text-law-cream/50 text-xs">{loc.label}</span>
+                  {loc.lines.join(", ")}
+                </address>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

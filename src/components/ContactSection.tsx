@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Navigation } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { practiceAreas } from "@/data/practiceAreas";
-import { contact, mailHref, mapDirectionsHref, mapEmbedSrc, whatsappHref } from "@/config/contact";
+import { contact, locations, mailHref, mapDirectionsHref, mapEmbedSrc, whatsappHref } from "@/config/contact";
 import { CallLink, whatsappButtonClass } from "@/components/LeadLinks";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,9 @@ const areaOptions = [...practiceAreas.map((a) => a.short), OTHER];
 const inputClass =
   "w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground font-body text-base focus:outline-none focus:ring-2 focus:ring-primary";
 
-const emptyForm = (area = "") => ({ name: "", phone: "", area, message: "" });
+const mapLocation = locations.find((l) => l.showMap);
+
+const emptyForm =(area = "") => ({ name: "", phone: "", area, message: "" });
 
 const ContactSection = ({ defaultArea = "", showHeading = true }: { defaultArea?: string; showHeading?: boolean }) => {
   const [form, setForm] = useState(() => emptyForm(defaultArea));
@@ -142,31 +144,42 @@ const ContactSection = ({ defaultArea = "", showHeading = true }: { defaultArea?
                   <Clock className="w-5 h-5 text-law-gold" aria-hidden="true" />
                   {contact.hours}
                 </li>
-                <li className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-law-gold" aria-hidden="true" />
-                  {contact.address}
-                </li>
               </ul>
+              <div className="grid sm:grid-cols-2 gap-4 border-t border-law-warm-gray/25 pt-4">
+                {locations.map((loc) => (
+                  <address key={loc.label} className="not-italic text-sm text-law-cream/80 flex gap-3">
+                    <MapPin className="w-5 h-5 text-law-gold flex-shrink-0" aria-hidden="true" />
+                    <span className="flex flex-col gap-0.5">
+                      <span className="text-xs font-semibold uppercase tracking-widest text-law-gold">{loc.label}</span>
+                      {loc.lines.map((line) => (
+                        <span key={line}>{line}</span>
+                      ))}
+                      <a
+                        href={mapDirectionsHref(loc.mapQuery)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-flex items-center gap-1.5 text-law-gold hover:underline underline-offset-2"
+                      >
+                        <Navigation className="w-3.5 h-3.5" aria-hidden="true" />
+                        Directions<span className="sr-only"> to our {loc.label.toLowerCase()}</span>
+                      </a>
+                    </span>
+                  </address>
+                ))}
+              </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
-              <iframe
-                src={mapEmbedSrc}
-                className="w-full h-72 border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={`${contact.firmName} location map`}
-              />
-              <a
-                href={mapDirectionsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-card py-3 text-sm font-semibold text-primary hover:underline"
-              >
-                <Navigation className="w-4 h-4" aria-hidden="true" />
-                Get directions
-              </a>
-            </div>
+            {mapLocation && (
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-border">
+                <iframe
+                  src={mapEmbedSrc(mapLocation.mapQuery)}
+                  className="w-full h-72 border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Map of our ${mapLocation.label.toLowerCase()}: ${mapLocation.lines.join(", ")}`}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

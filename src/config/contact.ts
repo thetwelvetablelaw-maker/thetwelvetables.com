@@ -15,9 +15,6 @@ export const contact = {
   whatsappDigits: WHATSAPP_DIGITS,
   email: "thetwelvetablelaw@gmail.com",
   hours: "Mon–Sat, 10:00 am – 7:00 pm",
-  // Shown in the contact section and footer; mapQuery drives the embedded map and directions link.
-  address: "Delhi, India",
-  mapQuery: "Supreme Court of India, New Delhi",
   // Leave a link empty to hide its icon.
   social: {
     facebook: "",
@@ -26,6 +23,24 @@ export const contact = {
   },
   defaultWhatsappMessage: "Hello TheTwelveTable, I would like to discuss a legal matter.",
 };
+
+// Where clients can meet the advocates. The first location with `showMap` is embedded on the contact section.
+export const locations = [
+  {
+    label: "Chamber",
+    lines: ["Chamber No. 59", "Supreme Court of India, New Delhi"],
+    mapQuery: "Supreme Court of India, Tilak Marg, New Delhi",
+    postal: { streetAddress: "Chamber No. 59, Supreme Court of India, Tilak Marg", addressLocality: "New Delhi", addressRegion: "Delhi" },
+    showMap: false,
+  },
+  {
+    label: "Office",
+    lines: ["B-21, Shindler Building", "Sector 2, Noida, Uttar Pradesh"],
+    mapQuery: "B-21, Sector 2, Noida, Uttar Pradesh",
+    postal: { streetAddress: "B-21, Shindler Building, Sector 2", addressLocality: "Noida", addressRegion: "Uttar Pradesh" },
+    showMap: true,
+  },
+];
 
 export const telHref = `tel:+${contact.phoneDigits}`;
 export const mailHref = `mailto:${contact.email}`;
@@ -36,5 +51,6 @@ export const whatsappHref = (message: string = contact.defaultWhatsappMessage) =
 export const practiceAreaMessage = (area: string) =>
   `Hello TheTwelveTable, I would like to discuss a ${area} matter.`;
 
-export const mapEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&output=embed`;
-export const mapDirectionsHref = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(contact.mapQuery)}`;
+export const mapEmbedSrc = (query: string) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+export const mapDirectionsHref = (query: string) =>
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
