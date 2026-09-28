@@ -13,7 +13,7 @@ const heading = Playfair_Display({ subsets: ["latin"], weight: ["600", "700"], v
 const body = Source_Sans_3({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body", display: "swap" });
 
 const title = `${contact.firmName} | Advocates, Solicitors & Legal Consultants in Delhi`;
-const description = `Advocates practising before the Supreme Court, Delhi High Court and District Courts. Call or WhatsApp ${contact.phoneDisplay}.`;
+const description = `Advocates practising before the Supreme Court, Delhi High Court and District Courts, with an office in Noida. Call or WhatsApp ${contact.phoneDisplay}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

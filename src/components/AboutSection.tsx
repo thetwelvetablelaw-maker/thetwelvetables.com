@@ -42,10 +42,11 @@ const AboutSection = ({ linkToAbout = false }: { linkToAbout?: boolean }) => {
             <p className="text-primary font-body text-sm uppercase tracking-widest mb-2">About us</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">{contact.firmName}</h2>
             <p className="text-muted-foreground font-body leading-relaxed mb-6">
-              {contact.firmName} is a firm of advocates, solicitors and legal consultants based in Delhi, in practice since
-              2009. We advise individuals, families and businesses, and represent them before courts and tribunals across
-              Delhi NCR and before the Supreme Court of India. Every matter starts with a confidential consultation in
-              which we listen to the facts, review the documents and explain the options available.
+              {contact.firmName} is a firm of advocates, solicitors and legal consultants in practice since 2009, with a
+              chamber at the Supreme Court of India and an office in Noida. We advise individuals, families and
+              businesses, and represent them before the Supreme Court and the courts and tribunals of Delhi NCR. Every
+              matter starts with a confidential consultation in which we listen to the facts, review the documents and
+              explain the options available.
             </p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">

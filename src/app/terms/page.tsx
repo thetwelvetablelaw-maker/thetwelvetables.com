@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
-import { contact, mailHref, siteUrl } from "@/config/contact";
+import { contact, locations, mailHref, siteUrl } from "@/config/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -72,7 +72,15 @@ export default function TermsPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms: <a href={mailHref}>{contact.email}</a>.
+        {contact.firmName}
+        {locations.map((loc) => (
+          <span key={loc.label}>
+            <br />
+            {loc.label}: {loc.lines.join(", ")}
+          </span>
+        ))}
+        <br />
+        Questions about these terms: <a href={mailHref}>{contact.email}</a>
       </p>
     </LegalPage>
   );

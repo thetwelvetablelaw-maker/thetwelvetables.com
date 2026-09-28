@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Call or WhatsApp ${contact.phoneDisplay}, ${contact.hours}. Email ${contact.email}. ${contact.firmName}, Delhi.`,
+  description: `Call or WhatsApp ${contact.phoneDisplay}, ${contact.hours}. Chamber No. 59, Supreme Court of India; office at B-21, Sector 2, Noida. ${contact.firmName}.`,
   alternates: { canonical: "/contact/" },
 };
 

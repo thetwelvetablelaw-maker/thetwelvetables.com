@@ -7,7 +7,7 @@ import { contact } from "@/config/contact";
 
 export const metadata: Metadata = {
   title: "About the Firm",
-  description: `${contact.firmName} is a firm of advocates, solicitors and legal consultants in Delhi, practising before the Supreme Court, Delhi High Court and District Courts since 2009.`,
+  description: `${contact.firmName} is a firm of advocates, solicitors and legal consultants practising before the Supreme Court, Delhi High Court and District Courts since 2009. Chamber at the Supreme Court of India; office in Noida.`,
   alternates: { canonical: "/about/" },
 };
 
@@ -43,7 +43,7 @@ export default function AboutPage() {
       <PageHero
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         title={`About ${contact.firmName}`}
-        intro="Advocates, solicitors and legal consultants in Delhi, practising before the Supreme Court of India, the Delhi High Court and District Courts since 2009."
+        intro="Advocates, solicitors and legal consultants practising before the Supreme Court of India, the Delhi High Court and District Courts since 2009, with a chamber at the Supreme Court and an office in Noida."
       />
 
       <AboutSection />
