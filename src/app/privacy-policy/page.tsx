@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy-policy/" },
 };
 
-// Draft for the firm's review. Update the "Analytics" section if Google Analytics or Zaraz is switched on.
+// Draft for the firm's review. Keep the cookies and advertising sections in step with the tags in src/config/ads.ts.
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="26 September 2026">
+    <LegalPage title="Privacy Policy" updated="3 October 2026">
       <p>
         This policy explains what personal information {contact.firmName} (“we”, “us”) receives when you use this
         website or contact us, why we use it, and the choices you have. It is written with reference to the Digital
@@ -41,16 +41,21 @@ export default function PrivacyPolicyPage() {
 
       <h2>Cookies and browser storage</h2>
       <p>
-        This website does not use advertising or tracking cookies. It stores one setting in your browser (local storage)
-        to remember that you have read the Bar Council disclaimer notice, so it is not shown on every page. Cloudflare may
-        set a strictly necessary security cookie to protect the website from automated abuse. You can clear these at any
-        time in your browser settings.
+        This website uses the Google tag from Google Ads, which sets cookies to measure whether visits that start from
+        our ads lead to a call, a WhatsApp message or an enquiry. The website also stores one setting in your browser
+        (local storage) to remember that you have read the Bar Council disclaimer notice, and Cloudflare may set a
+        strictly necessary security cookie to protect the website from automated abuse. You can block or clear cookies at
+        any time in your browser settings; the website works without them.
       </p>
 
-      <h2>Analytics</h2>
+      <h2>Advertising and measurement</h2>
       <p>
-        We may count how many visitors tap the Call and WhatsApp buttons, so that we can understand which pages are
-        useful. These counts do not include the contents of your messages or calls.
+        We advertise on Google Search. When you visit from one of our ads, Google Ads records that the visit came from
+        the ad and whether you then tapped Call or WhatsApp or sent the enquiry form. Google receives technical
+        information such as your IP address, browser and the pages visited, and processes it under its own privacy
+        policy (policies.google.com/privacy). We do not send Google your name, phone number or the contents of your
+        messages or calls, and we do not use remarketing lists or personalised advertising audiences. You can manage
+        Google ad personalisation at adssettings.google.com.
       </p>
 
       <h2>How we use your information</h2>

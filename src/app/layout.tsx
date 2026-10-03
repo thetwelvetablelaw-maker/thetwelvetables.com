@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LeadButtons from "@/components/LeadButtons";
 import DisclaimerNotice from "@/components/DisclaimerNotice";
+import GoogleAdsTag from "@/components/GoogleAdsTag";
 import { Toaster } from "@/components/ui/toaster";
 import { contact, googleBusinessUrl, locations, siteUrl } from "@/config/contact";
 import { practiceAreas } from "@/data/practiceAreas";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LeadButtons />
         <DisclaimerNotice />
         <Toaster />
+        <GoogleAdsTag />
       </body>
     </html>
   );

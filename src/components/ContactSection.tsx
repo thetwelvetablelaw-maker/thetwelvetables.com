@@ -9,6 +9,7 @@ import { contact, locations, mailHref, mapDirectionsHref, mapEmbedSrc, whatsappH
 import { CallLink, whatsappButtonClass } from "@/components/LeadLinks";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { cn } from "@/lib/utils";
+import { trackLead } from "@/lib/track";
 
 const OTHER = "Other";
 const areaOptions = [...practiceAreas.map((a) => a.short), OTHER];
@@ -47,6 +48,7 @@ const ContactSection = ({ defaultArea = "", showHeading = true }: { defaultArea?
 
     // Opened inside the submit gesture so pop-up blockers allow it.
     window.open(whatsappHref(text), "_blank", "noopener,noreferrer");
+    trackLead("form");
 
     toast({
       title: "Almost done",
