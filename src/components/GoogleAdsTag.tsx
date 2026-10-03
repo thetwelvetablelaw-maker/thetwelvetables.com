@@ -6,6 +6,8 @@ import { googleAdsId } from "@/config/ads";
 import { trackLead } from "@/lib/track";
 
 // Loads the Google tag on every page and reports Call / WhatsApp link taps as conversions.
+// Ad personalisation is off: no remarketing lists, which Google disallows for legal and hardship topics
+// and which the Privacy Policy says we do not use.
 // The enquiry form reports its own conversion on submit (see ContactSection).
 const GoogleAdsTag = () => {
   useEffect(() => {
@@ -25,7 +27,7 @@ const GoogleAdsTag = () => {
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${googleAdsId}');`}
+gtag('config', '${googleAdsId}', { allow_ad_personalization_signals: false });`}
       </Script>
     </>
   );
