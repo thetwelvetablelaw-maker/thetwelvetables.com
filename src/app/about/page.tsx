@@ -7,7 +7,7 @@ import { contact } from "@/config/contact";
 
 export const metadata: Metadata = {
   title: "About the Firm",
-  description: `${contact.firmName} is a firm of advocates, solicitors and legal consultants practising before the Supreme Court, Delhi High Court and District Courts since 2009. Chamber at the Supreme Court of India; office in Noida.`,
+  description: `Advocates and legal consultants practising before the Supreme Court and Delhi High Court since 2009. Chamber at the Supreme Court; office in Noida.`,
   alternates: { canonical: "/about/" },
 };
 

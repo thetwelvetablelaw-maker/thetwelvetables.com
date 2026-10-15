@@ -13,12 +13,12 @@ import { practiceAreas } from "@/data/practiceAreas";
 const heading = Playfair_Display({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-heading", display: "swap" });
 const body = Source_Sans_3({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body", display: "swap" });
 
-const title = `${contact.firmName} | Advocates, Solicitors & Legal Consultants in Delhi`;
+const title = `${contact.firmName} | Advocates & Legal Consultants in Delhi`;
 const description = `Advocates practising before the Supreme Court, Delhi High Court and District Courts, with an office in Noida. Call or WhatsApp ${contact.phoneDisplay}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: title, template: `%s | ${contact.firmName}, Delhi` },
+  title: { default: title, template: `%s | ${contact.firmName}` },
   description,
   openGraph: { type: "website", locale: "en_IN", siteName: contact.firmName, title, description },
   twitter: { card: "summary_large_image", title, description },
@@ -39,6 +39,14 @@ const jsonLd = {
   email: contact.email,
   address: locations.map((l) => ({ "@type": "PostalAddress", ...l.postal, addressCountry: "IN" })),
   areaServed: "Delhi NCR",
+  logo: `${siteUrl}/apple-icon.png`,
+  image: `${siteUrl}/opengraph-image`,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "10:00",
+    closes: "19:00",
+  },
   hasMap: googleBusinessUrl,
   sameAs: [googleBusinessUrl],
   knowsAbout: practiceAreas.map((a) => a.title),

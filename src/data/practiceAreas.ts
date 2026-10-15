@@ -137,6 +137,7 @@ export const practiceAreas: PracticeArea[] = [
   {
     slug: "cat",
     title: "Central Administrative Tribunal",
+    heading: "CAT Lawyers in Delhi",
     short: "CAT (Service)",
     image: catImg,
     desc: "Service matters of government employees before the CAT.",

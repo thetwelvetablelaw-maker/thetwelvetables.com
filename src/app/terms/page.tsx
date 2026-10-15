@@ -5,7 +5,7 @@ import { contact, locations, mailHref, siteUrl } from "@/config/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: `Terms that apply to the use of the ${contact.firmName} website.`,
+  description: `Terms of use for the ${contact.firmName} website: information only, no lawyer-client relationship, Indian law and New Delhi jurisdiction.`,
   alternates: { canonical: "/terms/" },
 };
 

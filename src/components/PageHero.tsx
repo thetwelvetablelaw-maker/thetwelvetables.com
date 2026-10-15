@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { siteUrl } from "@/config/contact";
 
 interface Crumb {
   label: string;
@@ -19,6 +20,21 @@ const PageHero = ({
   children?: ReactNode;
 }) => (
   <section className="bg-law-dark py-12 md:py-14">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: crumbs.map((c, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: c.label,
+            ...(c.href ? { item: `${siteUrl}${c.href}` } : {}),
+          })),
+        }),
+      }}
+    />
     <div className="container mx-auto px-4">
       <nav aria-label="Breadcrumb" className="text-sm text-law-cream/60 mb-4">
         <ol className="flex flex-wrap items-center gap-2">
