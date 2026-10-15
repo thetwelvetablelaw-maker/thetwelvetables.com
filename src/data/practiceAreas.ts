@@ -96,7 +96,7 @@ export const practiceAreas: PracticeArea[] = [
     short: "NRI Matter",
     desc: "Property, succession, power of attorney and family matters in India for clients living abroad.",
     detail:
-      "Clients living outside India often need legal work done in Delhi NCR without travelling. We handle property disputes and illegal possession, partition and succession, wills and probate, powers of attorney, and matrimonial and family matters involving a spouse abroad. Consultations are held by video call or WhatsApp at a time that suits your time zone, documents are reviewed in advance, and we update you after every hearing.",
+      "Clients living outside India often need legal work done in Delhi NCR without travelling. We handle property disputes and illegal possession, partition and succession, wills and probate, powers of attorney, and matrimonial and family matters involving a spouse abroad. Consultations are held by video call or WhatsApp at a time that suits your time zone, documents are reviewed in advance, and we update you after every hearing. We handle matters before courts and authorities in India only; we do not advise on the laws of other countries.",
   },
   {
     slug: "civil",
