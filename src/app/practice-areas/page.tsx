@@ -5,7 +5,7 @@ import { contact } from "@/config/contact";
 
 export const metadata: Metadata = {
   title: "Practice Areas",
-  description: `Divorce, domestic violence, bail, cheque bounce, civil, criminal, Supreme Court, corporate, CAT and DRT matters. ${contact.firmName}, Delhi.`,
+  description: `Divorce, domestic violence, bail, cheque bounce, traffic challan, NRI legal services, civil, criminal, Supreme Court, corporate, CAT and DRT matters. ${contact.firmName}, Delhi.`,
   alternates: { canonical: "/practice-areas/" },
 };
 

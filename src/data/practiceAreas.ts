@@ -15,9 +15,12 @@ import debtImg from "@/assets/services/debt.webp";
 export interface PracticeArea {
   slug: string;
   title: string;
+  /** Page heading and search title; defaults to "<title> Lawyers in Delhi". */
+  heading?: string;
   /** Short name used in the WhatsApp message and the enquiry form dropdown. */
   short: string;
-  image: StaticImageData;
+  /** Optional: the page shows it only when present. */
+  image?: StaticImageData;
   desc: string;
   detail: string;
 }
@@ -77,6 +80,23 @@ export const practiceAreas: PracticeArea[] = [
     desc: "Complaints and defence under Section 138 of the Negotiable Instruments Act, 1881.",
     detail:
       "A complaint for dishonour of a cheque under Section 138 of the Negotiable Instruments Act, 1881 must follow strict timelines: a legal demand notice within 30 days of the return memo, and a complaint within one month after the 15-day notice period expires. We draft and send demand notices, file complaints, and represent drawers defending such complaints, including applications for compounding and settlement.",
+  },
+  {
+    slug: "traffic-challan",
+    title: "Traffic Challan",
+    short: "Traffic Challan",
+    desc: "Court challans, contested challans, impounded vehicles and drink-driving cases in Delhi NCR.",
+    detail:
+      "Traffic challans that are not paid in time are sent to a virtual court and, after that, to a regular traffic court as a court challan. We appear for vehicle owners and drivers in these courts across Delhi NCR: contesting challans issued in error, attending court challan hearings, applying for the release of seized or impounded vehicles, and defending drink-driving and dangerous-driving cases under the Motor Vehicles Act, 1988. Where a Lok Adalat is scheduled, we also advise on settling pending challans there.",
+  },
+  {
+    slug: "nri-legal-services",
+    title: "NRI Legal Services",
+    heading: "Lawyers for NRIs in Delhi NCR",
+    short: "NRI Matter",
+    desc: "Property, succession, power of attorney and family matters in India for clients living abroad.",
+    detail:
+      "Clients living outside India often need legal work done in Delhi NCR without travelling. We handle property disputes and illegal possession, partition and succession, wills and probate, powers of attorney, and matrimonial and family matters involving a spouse abroad. Consultations are held by video call or WhatsApp at a time that suits your time zone, documents are reviewed in advance, and we update you after every hearing.",
   },
   {
     slug: "civil",

@@ -65,7 +65,8 @@ const ContactSection = ({ defaultArea = "", showHeading = true }: { defaultArea?
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Contact Us</h2>
             <div className="gold-accent-line mx-auto mt-4" />
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-              The quickest way to reach us is a call or a WhatsApp message. You can also leave your details below.
+              Consultations with our advocates are paid. Call or WhatsApp us to book one, or leave your details below.
+              We do not give legal advice over a call or chat before a consultation.
             </p>
           </div>
         )}
@@ -74,7 +75,8 @@ const ContactSection = ({ defaultArea = "", showHeading = true }: { defaultArea?
           <div className="rounded-2xl bg-card border border-border p-6 md:p-8 shadow-xl">
             <h3 className="font-heading text-xl font-bold text-foreground mb-1">Send an enquiry</h3>
             <p className="text-sm text-muted-foreground mb-6">
-              This opens WhatsApp with your details filled in. Just press Send.
+              This opens WhatsApp with your details filled in. Just press Send, and we will reply with the
+              consultation fee and available times.
             </p>
 
             <form id="enquiry-form" onSubmit={handleSubmit} className="space-y-4">

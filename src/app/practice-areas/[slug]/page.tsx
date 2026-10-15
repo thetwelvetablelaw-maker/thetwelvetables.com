@@ -26,7 +26,7 @@ const findArea = (slug: string) => practiceAreas.find((a) => a.slug === slug);
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const area = findArea((await params).slug);
   if (!area) return {};
-  const title = `${area.title} Lawyers in Delhi`;
+  const title = area.heading ?? `${area.title} Lawyers in Delhi`;
   const description = `${area.desc} Call or WhatsApp ${contact.phoneDisplay}.`;
   return {
     title,
@@ -56,7 +56,7 @@ export default async function PracticeAreaPage({ params }: Props) {
       )}
       <PageHero
         crumbs={[{ label: "Home", href: "/" }, { label: "Practice Areas", href: "/practice-areas/" }, { label: area.title }]}
-        title={`${area.title} Lawyers in Delhi`}
+        title={area.heading ?? `${area.title} Lawyers in Delhi`}
         intro={area.desc}
       >
         <div className="flex flex-col sm:flex-row gap-3">
@@ -72,14 +72,16 @@ export default async function PracticeAreaPage({ params }: Props) {
       <section className="py-16 section-light">
         <div className="container mx-auto px-4 grid lg:grid-cols-3 gap-12">
           <article className="lg:col-span-2">
-            <Image
-              src={area.image}
-              alt=""
-              sizes="(min-width: 1024px) 66vw, 100vw"
-              className="w-full h-64 md:h-80 object-cover rounded-xl mb-8"
-              preload
-              fetchPriority="high"
-            />
+            {area.image && (
+              <Image
+                src={area.image}
+                alt=""
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                className="w-full h-64 md:h-80 object-cover rounded-xl mb-8"
+                preload
+                fetchPriority="high"
+              />
+            )}
             <h2 className="font-heading text-2xl font-bold text-foreground mb-4">How we can help</h2>
             <p className="text-muted-foreground leading-relaxed text-base md:text-lg max-w-[65ch]">{area.detail}</p>
 

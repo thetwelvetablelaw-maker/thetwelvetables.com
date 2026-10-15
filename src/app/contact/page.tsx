@@ -39,7 +39,10 @@ export default function ContactPage() {
             <FileText className="w-6 h-6 text-primary" aria-hidden="true" />
             Before your consultation
           </h2>
-          <p className="text-muted-foreground mb-4">It helps to have these ready. Please do not send original documents.</p>
+          <p className="text-muted-foreground mb-4">
+            Consultations are paid; we confirm the fee when you book. It helps to have these ready. Please do not send
+            original documents.
+          </p>
           <ul className="list-disc pl-6 space-y-2 text-foreground">
             {bring.map((b) => (
               <li key={b}>{b}</li>

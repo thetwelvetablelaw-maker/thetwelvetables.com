@@ -174,4 +174,32 @@ export const practiceAreaFaqs: Record<string, Faq[]> = {
       a: "For appeals under Section 18 of the SARFAESI Act, the borrower must deposit 50% of the amount claimed or determined, which the Appellate Tribunal may reduce to 25%.",
     },
   ],
+  "traffic-challan": [
+    {
+      q: "My challan has been sent to court. What happens now?",
+      a: "A challan that is not paid within the time allowed is transferred to a virtual court, where it can usually still be paid online. If it remains unpaid it moves to a regular traffic court as a court challan, and you or your advocate need to appear on the date given. The court can then impose the fine or hear any objection you have.",
+    },
+    {
+      q: "Can I contest a traffic challan instead of paying it?",
+      a: "Yes. If a challan was issued in error, for example for the wrong vehicle number or a vehicle that was elsewhere at the time, you can contest it before the court. Keep the challan details and any proof, such as photographs, location records or documents, ready before your consultation.",
+    },
+    {
+      q: "How do I get a seized vehicle released?",
+      a: "A vehicle detained under the Motor Vehicles Act, 1988 is released on an application to the court or authority concerned, usually after the challan is dealt with and documents such as the registration certificate, insurance and pollution certificate are produced. We prepare the application and appear for you.",
+    },
+  ],
+  "nri-legal-services": [
+    {
+      q: "Do I need to travel to India for my case?",
+      a: "Often not. An advocate can appear for you, and a person holding your power of attorney can act for you in many matters. Some steps, such as giving evidence, may need you to appear in person, or by video conference where the court allows it.",
+    },
+    {
+      q: "How do I give a power of attorney from abroad?",
+      a: "A power of attorney signed abroad is usually attested at an Indian embassy or consulate, or apostilled in countries that are party to the Hague Apostille Convention. It then has to be stamped in India within the time allowed before it can be used. We draft the document and tell you exactly which steps apply in your country.",
+    },
+    {
+      q: "Someone has occupied my property in India. What can I do?",
+      a: "Depending on the facts, remedies include a legal notice, a civil suit for possession and an injunction, and a criminal complaint where there is forgery or trespass. We start by reviewing the title documents and the history of the property before advising on the route.",
+    },
+  ],
 };
